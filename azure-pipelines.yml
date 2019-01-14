@@ -1,0 +1,16 @@
+name: MusiCore.CI
+
+trigger:
+- master
+
+resources:
+- repo: self
+  clean: true
+
+jobs:
+- template: build.yml
+  parameters:
+    name: MusiCoreCI
+    artifactFileName: '$(Build.ArtifactStagingDirectory)/MusiCore-CI.zip'
+    pool:
+      vmImage: 'Ubuntu-16.04'
