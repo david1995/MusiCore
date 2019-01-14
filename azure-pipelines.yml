@@ -10,7 +10,7 @@ resources:
 jobs:
 - template: build.yml
   parameters:
-    name: MusiCore-CI
+    name: MusiCore.CI
     artifactFileName: '$(Build.ArtifactStagingDirectory)/MusiCore-CI.zip'
     pool:
       vmImage: 'Ubuntu-16.04'
