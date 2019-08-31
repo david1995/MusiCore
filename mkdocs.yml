@@ -1,0 +1,9 @@
+site_name: MusiCore
+repo_url: https://github.com/david1995/MusiCore
+theme: readthedocs
+
+nav:
+- 'Getting Started': getting-started.md
+- 'About MusiCore':
+  - License: license.md
+
