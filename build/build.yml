@@ -22,14 +22,14 @@ jobs:
   - task: PowerShell@2
     displayName: 'build Debug'
     inputs: 
-      filePath: build.ps1
+      filePath: build/build.ps1
       workingDirectory: ./
       arguments: Debug
 
   - task: PowerShell@2
     displayName: 'build Release'
     inputs: 
-      filePath: build.ps1
+      filePath: build/build.ps1
       workingDirectory: ./
       arguments: Release
 

@@ -8,7 +8,7 @@ resources:
   clean: true
 
 jobs:
-- template: build/build.yml
+- template: build.yml
   parameters:
     name: MusiCoreCI
     artifactFileName: '$(Build.ArtifactStagingDirectory)/MusiCore-CI.zip'
