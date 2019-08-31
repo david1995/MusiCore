@@ -13,4 +13,4 @@ jobs:
     name: MusiCoreCI
     artifactFileName: '$(Build.ArtifactStagingDirectory)/MusiCore-CI.zip'
     pool:
-      vmImage: 'ubuntu-18.04'
+      vmImage: 'Ubuntu 16.04'
