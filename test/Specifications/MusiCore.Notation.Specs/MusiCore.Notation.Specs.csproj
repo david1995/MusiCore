@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,6 +10,10 @@
     <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.0.225" />
     <PackageReference Include="SpecFlow.xUnit" Version="3.0.225" />
     
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\MusiCore.Notation\MusiCore.Notation.csproj" />
   </ItemGroup>
 
 </Project>
