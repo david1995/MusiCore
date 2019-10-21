@@ -32,12 +32,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{1A51304A
 		build\azure-pipelines.yml = build\azure-pipelines.yml
 		build\build.ps1 = build\build.ps1
 		build\build.yml = build\build.yml
+		directory.build.props = directory.build.props
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "meta", "meta", "{8EDA5384-54B7-4CEF-ABA0-4161447B2152}"
 	ProjectSection(SolutionItems) = preProject
 		LICENSE = LICENSE
 		mkdocs.yml = mkdocs.yml
+		MusiCore.sln.DotSettings = MusiCore.sln.DotSettings
 		README.md = README.md
 	EndProjectSection
 EndProject
