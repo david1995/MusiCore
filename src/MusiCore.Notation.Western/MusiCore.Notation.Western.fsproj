@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Compile Include="WesternNote.fs" />
+    <Compile Include="WesternChord.fs" />
   </ItemGroup>
 
   <ItemGroup>
