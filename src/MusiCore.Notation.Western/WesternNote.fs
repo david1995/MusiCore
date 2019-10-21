@@ -1,7 +1,5 @@
 ﻿namespace MusiCore.Notation.Western
 
-open MusiCore.Notation
-
 type Octave =
 | Zero = 0
 | One = 1
@@ -15,50 +13,25 @@ type Octave =
 | Nine = 9
 
 type PitchClass = A | B | C | D | E | F | G
-type Accidental = DoubleFlat | Flat | Natural | Sharp | DoubleSharp
-type Pitch = Octave * PitchClass * Accidental
+type Accidental = Flat | Natural | Sharp
+type PitchClassWithAccidental = { PitchClass : PitchClass; Accidental : Accidental }
+type Pitch = { Octave : Octave; PitchClass : PitchClass; Accidental : Accidental }
 type Duration = DoubleWhole | Whole | Half | Quarter | Eighth | Sixteenth | Thirtysecondth | Sixtyfourth
 
 
-type IWesternNotationElement =
-    inherit INote
-
-type IWesternNotationElementWithDuration =
-    inherit IWesternNotationElement
-    abstract member Duration : Duration
-
 type IWesternNote =
-    inherit IWesternNotationElementWithDuration
+  interface
+  end
 
-type IWesternNoteAnnotation =
-    inherit IWesternNotationElement
-    abstract member WrappedNote : IWesternNote
+type WesternNote =
+  | WesternBreak of Duration : Duration
+  | WesternRhythmicNote of Duration : Duration
+  | WesternNoteWithPitch of Duration : Duration * Pitch : Pitch
+  interface IWesternNote
 
-type WesternNotationElement =
-| WesternBreak of Duration : Duration
+type WesternNoteAnnotation =
+  | Dot of AnnotatedNote : IWesternNote
+  | Accent of AnnotatedNote : IWesternNote
+  | Staccato of AnnotatedNote : IWesternNote
+  interface IWesternNote
 
-type WesternBreak =
-    {
-        Duration : Duration
-    }
-    interface IWesternNote with
-        member this.Duration = this.Duration
-
-type WesternRhythmicNote(duration : Duration) =
-    interface IWesternNote with
-        member this.Duration = this.Duration
-
-    member public __.Duration = duration
-
-type WesternNoteWithPitch(pitch : Pitch, duration : Duration) =
-    interface IWesternNote with
-        member this.Duration = this.Duration
-
-    member public __.Duration = duration
-    member public __.Pitch : Pitch = pitch
-
-type DottedWesternNoteAnnotation(wrappedNote : IWesternNote) =
-    interface IWesternNoteAnnotation with
-        member this.WrappedNote = this.WrappedNote
-
-    member public __.WrappedNote = wrappedNote
